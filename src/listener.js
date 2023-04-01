@@ -13,9 +13,9 @@ class Listener {
 
     try {
 
-      const { owner, playlistId, targetEmail } = JSON.parse(message.content.toString());
+      const { playlistId, targetEmail } = JSON.parse(message.content.toString());
 
-      let playlist = await this._playlistsService.getPlaylists(owner);
+      let playlist = await this._playlistsService.getPlaylists(playlistId);
       
       const getdatasong = await this._playlistsService.getPlaylistsongById(playlistId)
 
